@@ -21,10 +21,10 @@ body {
   background: linear-gradient(to bottom, #2a2d32, #131313);
 }
 .box {
-  background-color: #24272c;
+  background: linear-gradient(to bottom, #24272c, transparent);
   border: 1px solid rgba(255, 255, 255, 0.041);
   box-shadow: 0 4px 10px #0000005c;
-  background-color: #24272c;
+
 }
 .sidebar {
   width: 20rem;
@@ -37,6 +37,9 @@ body {
 .body {
   width: 100%;
 }
+.body::-webkit-scrollbar{
+  display: none;
+}
 .video-sec {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -46,7 +49,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 0.5rem;
 }
-
+.animated-form-wrap{
+  background: url('./Assets/R.jfif');
+}
+.animated-form-wrap::before{
+  position: absolute;
+  content: '';
+  background: radial-gradient(transparent, black);
+  width: 100%;
+  height: 100%;
+}
 @media screen and (max-width: 428px) {
   .sidebar {
     width: 5rem;
