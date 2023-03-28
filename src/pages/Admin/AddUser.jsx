@@ -1,10 +1,14 @@
 import InputField from '../../components/Form/InputFeild';
+import Sidebar from '../../components/Sidebar_Section/Sidebar';
 
 const AddUser = () => {
   const submitHandle = (e) => {
     e.preventDefault();
   };
   return (
+    <>
+    <Sidebar />
+    <div className="body p-3 bg-gray-l00 bg-grad overflow-y-auto ">
     <div className="form-wrap box p-5">
       <h1 className="text-center text-cyan-400 font-bold uppercase text-2xl">
         Add user
@@ -23,6 +27,8 @@ const AddUser = () => {
         </button>
       </form>
     </div>
+    </div>
+    </>
   );
 };
 
