@@ -3,18 +3,14 @@ import moon from '../../Assets/Moon.svg'
 import tree from '../../Assets/Trees.svg'
 import silhouette from '../../Assets/Silhouette.svg'
 import './style.css'
-import { useEffect, useState } from 'react'
+import { useContext} from 'react'
 import UserHeader from '../../components/Body_section/UserHeader'
-import UpdateProfile from './UpdateProfile'
+import { AuthContext } from '../../Context/AuthContext'
+
 
 const HomePage = ()=>{
 
-  const [user, setUser] = useState()
-
-  useEffect(()=>{
-    const user = JSON.parse(localStorage.getItem('user'))
-    setUser(user)
-  },[])
+  const {user} = useContext(AuthContext)
 
 
   return (

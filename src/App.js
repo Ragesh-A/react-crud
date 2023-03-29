@@ -6,6 +6,8 @@ import Dashboard from './pages/Admin/Dashboard';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
 import {Routes, Route} from 'react-router-dom'
+import EditUser from './pages/Admin/EditUser';
+import UpdateProfile from './pages/user/UpdateProfile';
 
 const App = () => {
   return (
@@ -15,10 +17,11 @@ const App = () => {
         <Route path='/' element={<Home />} />
         < Route path='/login' element={<Signin />}/>
         < Route path='/signup' element={<Signup />}/>
+        < Route path='/profile' element={<UpdateProfile />}/>
         < Route path='/admin' element={<Dashboard />}/>
         < Route path='/admin/users' element={ <AllUsers />}/>
         < Route path='/admin/user' element={<AddUser />}/>
-        < Route path='/*/edit' element={<AddUser />}/>
+        < Route path='/admin/user/:userId' element={<EditUser />}/>
       </Routes>
 
         

@@ -8,7 +8,7 @@ const Signup = () => {
   const navigate = useNavigate()
   useEffect(()=>{
     const user = localStorage.getItem('user')
-    if(user){
+    if(user.user){
     navigate('/')  
     }
   },[])
@@ -32,7 +32,6 @@ const Signup = () => {
       }).then(res=>res.json())
       .then(data=>{ 
         if(data.success){
-          console.log(data);
           navigate('/login')
         }else{
           setErr(data.err)

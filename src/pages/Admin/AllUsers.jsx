@@ -25,7 +25,7 @@ const AllUsers = () => {
 
   return (
     <>
-      <Sidebar />a
+      <Sidebar />
       <div className="body p-3 bg-gray-l00 bg-grad overflow-y-auto ">
         <div className="users-sec">
           {users.map(user=>{

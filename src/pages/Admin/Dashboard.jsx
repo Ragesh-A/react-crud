@@ -7,7 +7,6 @@ import {isLogged} from '../../hooks/userAuth'
 const Dashboard = () => {
   const navigate = useNavigate();
   const user = isLogged()
-  console.log(user);
   useEffect(() => {
     fetch('http://localhost:8000/admin', {
       method: 'GET',
@@ -17,7 +16,6 @@ const Dashboard = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.err) {
           console.log(data.err);
           navigate('/');
@@ -28,7 +26,6 @@ const Dashboard = () => {
   return (
     <>
       <Sidebar />
-
       <Body />
     </>
   );

@@ -5,11 +5,12 @@ import { AuthContext } from '../../Context/AuthContext';
 
 const Profile = ({fn})=>{
 
-  const {user} = useContext(AuthContext)
+  const {user, dispatch} = useContext(AuthContext)
   const navigate = useNavigate()
   
   const logout = () =>{
     localStorage.clear('user')
+    dispatch({type: "LOGOUT"})
     navigate('/login')
   }
  const editProfile = ()=>{
