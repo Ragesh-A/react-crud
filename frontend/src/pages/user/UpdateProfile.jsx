@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from '../../components/Form/InputFeild';
 import { AuthContext } from '../../Context/AuthContext';
@@ -47,7 +47,6 @@ const UpdateProfile = ()=>{
   }
 
   const updatePicture = (e)=>{
-    console.log('ererr');
     e.preventDefault()
     const form = new FormData();
     form.append('profileImage', image)
@@ -82,6 +81,7 @@ const UpdateProfile = ()=>{
         
         <InputField defaultValue={name} label="Name" type="text" name="name" id="name" onchangeFn={setName}/>
         <InputField defaultValue={email} label="Email" type="email" name="email" id="email" onchangeFn={setEmail}/>
+        <p className="error-response">{err}</p>
         <button className="text-cyan-500 border border-cyan-500 hover:bg-cyan-400 hover:text-white w-full p-2 rounded mt-3 uppercase font-bold ">
           update
         </button>

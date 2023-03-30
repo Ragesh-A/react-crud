@@ -9,21 +9,21 @@ const Signin = () =>{
   const navigate = useNavigate()
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem('user'))
-    if(user != null){
+    if(user !== null){
       if(user){
         navigate('/')  
         }
     }
-  },[])
+  },[navigate])
   const [err, setErr] = useState(false)
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const {user, dispatch } = useContext(AuthContext)
+  const {dispatch } = useContext(AuthContext)
 
   const submitHandle = (e)=>{
     e.preventDefault()
     dispatch({type: "LOGIN_START"})
-    if(email && password != '' ){
+    if(email && password !== '' ){
       fetch('http://localhost:8000/login',{
         method: 'post',
         headers: {
@@ -60,7 +60,7 @@ const Signin = () =>{
             Sign IN
           </button>
           <div className="text-right text-sm p-2">
-            <Link to='/signup' ><a>Create An Account</a></Link>
+            <Link to='/signup' >Create An Account</Link>
           </div>
           </form>
       </div>

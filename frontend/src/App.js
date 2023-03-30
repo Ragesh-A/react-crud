@@ -8,6 +8,7 @@ import Signin from './pages/Signin';
 import {Routes, Route} from 'react-router-dom'
 import EditUser from './pages/Admin/EditUser';
 import UpdateProfile from './pages/user/UpdateProfile';
+import PageNotFound from './pages/PageNotFound';
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
         < Route path='/admin/users' element={ <AllUsers />}/>
         < Route path='/admin/user' element={<AddUser />}/>
         < Route path='/admin/user/:userId' element={<EditUser />}/>
+        < Route path='*' element={<PageNotFound />}/>
+
       </Routes>
 
         
